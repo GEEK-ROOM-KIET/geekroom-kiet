@@ -119,3 +119,27 @@
   transform: translateY(-10px);
   box-shadow: 0 10px 30px rgba(241, 91, 34, 0.2);
 }
+
+/* Team card animations */
+.team-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-out;
+}
+
+.team-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.team-card .team-logo {
+  transition: transform 0.2s ease-out;
+}
+
+.team-card:hover .team-logo {
+  transform: scale(1.1);
+}

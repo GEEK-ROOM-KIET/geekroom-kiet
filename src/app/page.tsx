@@ -559,147 +559,33 @@ export default function Home() {
       );
   }, []);
 
-  // Team cards animation useEffect
+  // Simple team cards animation with Intersection Observer
   useEffect(() => {
-    // Team cards animation with scroll trigger
     const teamCards = teamCardsRef.current;
     if (teamCards.length > 0) {
-      // Define delay values matching your styled components version
-      const delays = [0, 800, 600, 200, 400, 800]; // in milliseconds
-      
-      teamCards.forEach((card, index) => {
-        const logo = card.querySelector('.team-logo');
-        const icon = card.querySelector('.team-icon');
-        const content = card.querySelector('.team-content');
-        
-        // Set initial states
-        gsap.set(card, { opacity: 0, y: 60, scale: 0.8 });
-        gsap.set(logo, { scale: 0, rotation: -180 });
-        gsap.set(content, { opacity: 0, y: 30 });
-
-        // Create timeline for this card
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        });
-
-        // Card entrance animation with custom delay
-        tl.to(card, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(1.4)",
-          delay: delays[index] / 1000 // Convert to seconds
-        })
-        // Logo animation with jelly effect
-        .to(logo, {
-          scale: 1,
-          rotation: 0,
-          duration: 0.8,
-          ease: "elastic.out(1, 0.5)"
-        }, `-=0.5`)
-        // Icon jelly wriggle animation
-        .to(icon, {
-          scale: 1.3,
-          rotation: 15,
-          duration: 0.3,
-          ease: "power2.out"
-        }, `-=0.3`)
-        .to(icon, {
-          scale: 0.9,
-          rotation: -8,
-          duration: 0.2,
-          ease: "power2.inOut"
-        })
-        .to(icon, {
-          scale: 1.1,
-          rotation: 5,
-          duration: 0.15,
-          ease: "power2.inOut"
-        })
-        .to(icon, {
-          scale: 1,
-          rotation: 0,
-          duration: 0.1,
-          ease: "power2.out"
-        })
-        // Content fade in
-        .to(content, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.out"
-        }, `-=0.8`);
-
-        // Continuous jelly animation for icons
-        if (icon) {
-          gsap.to(icon, {
-            rotation: "+=2",
-            duration: 2,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              // Add staggered delay for smooth appearance
+              setTimeout(() => {
+                entry.target.classList.add('team-card-visible');
+              }, index * 100); // 100ms delay between cards
+            }
           });
-          
-          gsap.to(icon, {
-            scale: 1.05,
-            duration: 3,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-            delay: 0.5
-          });
-        }
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
 
-        // Enhanced hover animations with jelly effect
-        if (logo && content && icon) {
-          card.addEventListener('mouseenter', () => {
-            gsap.to(logo, { 
-              scale: 1.15, 
-              rotation: 8,
-              duration: 0.4, 
-              ease: "back.out(1.5)" 
-            });
-            gsap.to(icon, { 
-              scale: 1.2, 
-              rotation: 15,
-              duration: 0.3, 
-              ease: "elastic.out(1, 0.8)" 
-            });
-            gsap.to(card, { 
-              y: -12, 
-              scale: 1.09,
-              duration: 0.4, 
-              ease: "power2.out" 
-            });
-          });
-          
-          card.addEventListener('mouseleave', () => {
-            gsap.to(logo, { 
-              scale: 1, 
-              rotation: 0,
-              duration: 0.4, 
-              ease: "elastic.out(1, 0.6)" 
-            });
-            gsap.to(icon, { 
-              scale: 1, 
-              rotation: 0,
-              duration: 0.4, 
-              ease: "elastic.out(1, 0.8)" 
-            });
-            gsap.to(card, { 
-              y: 0, 
-              scale: 1,
-              duration: 0.4, 
-              ease: "power2.out" 
-            });
-          });
-        }
+      teamCards.forEach((card) => {
+        observer.observe(card);
       });
+
+      return () => {
+        teamCards.forEach((card) => {
+          observer.unobserve(card);
+        });
+      };
     }
   }, []);
 
@@ -803,7 +689,7 @@ export default function Home() {
             {/* Tech Team Card */}
             <div
               ref={addToTeamCardRefs}
-              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300 team-card"
               style={{
                 boxShadow: '0 20px 60px rgba(255, 138, 101, 0.15), 0 8px 30px rgba(0, 0, 0, 0.3)',
                 transform: 'translateZ(0)', // Force hardware acceleration
@@ -838,7 +724,7 @@ export default function Home() {
             {/* Events Team Card */}
             <div
               ref={addToTeamCardRefs}
-              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300 team-card"
               style={{
                 boxShadow: '0 20px 60px rgba(100, 216, 203, 0.15), 0 8px 30px rgba(0, 0, 0, 0.3)',
                 transform: 'translateZ(0)', // Force hardware acceleration
@@ -873,7 +759,7 @@ export default function Home() {
             {/* Robotics Team Card */}
             <div
               ref={addToTeamCardRefs}
-              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300 team-card"
               style={{
                 boxShadow: '0 20px 60px rgba(255, 138, 101, 0.15), 0 8px 30px rgba(0, 0, 0, 0.3)',
                 transform: 'translateZ(0)', // Force hardware acceleration
@@ -907,7 +793,7 @@ export default function Home() {
             {/* Content Team Card */}
             <div
               ref={addToTeamCardRefs}
-              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300 team-card"
               style={{
                 boxShadow: '0 20px 60px rgba(100, 216, 203, 0.15), 0 8px 30px rgba(0, 0, 0, 0.3)',
                 transform: 'translateZ(0)', // Force hardware acceleration
@@ -942,7 +828,7 @@ export default function Home() {
             {/* Marketing and Design Team Card */}
             <div
               ref={addToTeamCardRefs}
-              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300 team-card"
               style={{
                 boxShadow: '0 20px 60px rgba(255, 138, 101, 0.15), 0 8px 30px rgba(0, 0, 0, 0.3)',
                 transform: 'translateZ(0)', // Force hardware acceleration
@@ -977,7 +863,7 @@ export default function Home() {
             {/* Research Team Card */}
             <div
               ref={addToTeamCardRefs}
-              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center border border-gray-700/30 transition-all duration-300 team-card"
               style={{
                 boxShadow: '0 20px 60px rgba(100, 216, 203, 0.15), 0 8px 30px rgba(0, 0, 0, 0.3)',
                 transform: 'translateZ(0)', // Force hardware acceleration
