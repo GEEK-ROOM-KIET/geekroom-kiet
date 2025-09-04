@@ -6,8 +6,6 @@
 
 </div>
 
----
-
 ## 📖 About
 
 **Geek Room KIET** is the official website for the Geek Room chapter at KIET (Krishna Institute of Engineering and Technology). We're a passionate community of students dedicated to fostering a dynamic tech culture through interdisciplinary learning, hands-on workshops, coding sessions, and collaborative projects.
@@ -88,6 +86,11 @@
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000) to see the website.
 
+### **Next Steps**
+- **Want to contribute?** Check out our [Contributing Guide](CONTRIBUTING.md)
+- **Need help?** Open an [issue](https://github.com/your-username/geekroom-kiet/issues)
+- **Have questions?** Join our community discussions
+
 ---
 
 ## 📁 Project Structure
@@ -151,22 +154,104 @@ geekroom-kiet/
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Please read our [Contributing Guide](CONTRIBUTING.md) before getting started.
+We welcome contributions from the community! Please follow these steps to get started:
 
-### **How to Contribute**
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feat/amazing-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add amazing feature'`)
-5. Push to the branch (`git push origin feat/amazing-feature`)
-6. Open a Pull Request
+### **Step 1: Fork the Repository**
+1. Go to the [Geek Room KIET repository](https://github.com/GEEK-ROOM-KIET/geekroom-kiet)
+2. Click the **"Fork"** button in the top-right corner
+3. This creates a copy of the project in your GitHub account
 
-### **Development Guidelines**
+### **Step 2: Clone Your Fork**
+```bash
+# Replace YOUR-USERNAME with your GitHub username
+git clone https://github.com/YOUR-USERNAME/geekroom-kiet.git
+cd geekroom-kiet
+```
+
+### **Step 3: Set Up Upstream Remote**
+```bash
+# Add the original repository as upstream
+git remote add upstream https://github.com/your-username/geekroom-kiet.git
+
+# Verify your remotes
+git remote -v
+```
+
+### **Step 4: Create a Feature Branch**
+```bash
+# Create and switch to a new branch
+git checkout -b feat/your-feature-name
+
+# Examples:
+# git checkout -b feat/add-new-component
+# git checkout -b fix/navbar-bug
+# git checkout -b docs/update-readme
+```
+
+### **Step 5: Make Your Changes**
+- Make your changes locally
+- Test your changes thoroughly
 - Follow the existing code style
 - Write clear commit messages
-- Test your changes locally
+
+### **Step 6: Commit Your Changes**
+```bash
+# Stage your changes
+git add .
+
+# Commit with a descriptive message
+git commit -m "feat: Add new component for better UX"
+
+# Examples of good commit messages:
+# "feat: Add dark mode toggle"
+# "fix: Resolve navbar alignment issue"
+# "docs: Update installation instructions"
+```
+
+### **Step 7: Push to Your Fork**
+```bash
+# Push your branch to your fork
+git push origin feat/your-feature-name
+```
+
+### **Step 8: Create a Pull Request**
+1. Go to your fork on GitHub
+2. Click **"Compare & pull request"**
+3. Fill out the PR template with:
+   - Clear description of changes
+   - Screenshots (for UI changes)
+   - Link to related issues
+4. Submit the pull request
+
+### **Step 9: Keep Your Fork Updated**
+```bash
+# Fetch latest changes from upstream
+git fetch upstream
+
+# Switch to main branch
+git checkout main
+
+# Merge upstream changes
+git merge upstream/main
+
+# Push updates to your fork
+git push origin main
+```
+
+### **📋 Development Guidelines**
+- **Read our [Contributing Guide](CONTRIBUTING.md)** for detailed guidelines
+- Follow the existing code style and patterns
+- Write clear, descriptive commit messages
+- Test your changes locally before submitting
 - Update documentation if needed
-- Be respectful and collaborative
+- Be respectful and collaborative in discussions
+- Ask questions if you're unsure about anything
+
+### **🐛 Finding Issues to Work On**
+1. Check the [Issues tab](https://github.com/your-username/geekroom-kiet/issues)
+2. Look for issues labeled `good first issue` or `help wanted`
+3. Comment on the issue to express interest
+4. Wait for assignment before starting work
 
 ---
 
