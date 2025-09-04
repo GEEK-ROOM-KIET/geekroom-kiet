@@ -27,7 +27,7 @@ export default function JoinUsPage() {
             </h1>
 
             <p className="text-center text-muted-foreground mb-12">
-              Become a part of Geek Room Plaksha and contribute to the tech community
+              Become a part of Geek Room KIET and contribute to the tech community
             </p>
 
             <div className="bg-muted/20 p-8 rounded-xl">
