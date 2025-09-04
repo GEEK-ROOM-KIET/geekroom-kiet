@@ -307,7 +307,7 @@ git push origin main
 
 ### **🐛 Finding Issues to Work On**
 1. Check the [Issues tab](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues)
-2. Look for issues labeled `good first issue` or `help wanted`
+2. Look for issues labeled `good first issue` or `help wanted` to start with open-source
 3. Comment on the issue to express interest
 4. Wait for assignment before starting work
 
@@ -315,41 +315,6 @@ git push origin main
 - **[Component Documentation](docs/components/)** - Learn about our UI components
 - **[API Documentation](docs/api/)** - Understand our API endpoints
 - **[Deployment Guide](docs/deployment/)** - Learn how to deploy the project
-
----
-
-## 📚 Documentation
-
-Our project includes comprehensive documentation to help you understand and contribute to the codebase:
-
-### **📁 Project Organization**
-- **[FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md)** - Complete guide to our project structure and organization principles
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Detailed contributing guidelines and workflow
-
-### **🔧 Development Resources**
-- **[Component Library](docs/components/)** - Documentation for all UI components
-- **[API Reference](docs/api/)** - Complete API documentation with examples
-- **[Deployment Guide](docs/deployment/)** - Step-by-step deployment instructions
-
-### **📖 Additional Guides**
-- **[Code Style Guide](docs/contributing/code-style.md)** - Coding standards and conventions
-- **[Testing Guide](docs/contributing/testing.md)** - How to write and run tests
-- **[Performance Guide](docs/contributing/performance.md)** - Performance optimization tips
-
-### **🛠️ Quick Reference**
-- **[Environment Setup](docs/deployment/environment.md)** - Environment variables and configuration
-- **[Troubleshooting](docs/contributing/troubleshooting.md)** - Common issues and solutions
-- **[FAQ](docs/contributing/faq.md)** - Frequently asked questions
-
----
-
-## 📞 Contact
-
-- **Website**: [geekroom-kiet.vercel.app](https://geekroom-kiet.vercel.app)
-- **Email**: [Contact Form](https://geekroom-kiet.vercel.app/#contact)
-- **GitHub**: [github.com/GEEK-ROOM-KIET/geekroom-kiet](https://github.com/GEEK-ROOM-KIET/geekroom-kiet)
-- **Documentation**: [Project Docs](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/tree/main/docs)
-- **Issues**: [Report Bug](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues)
 
 ---
 
@@ -366,6 +331,6 @@ Our project includes comprehensive documentation to help you understand and cont
 
 **Made with ❤️ by Geek Room KIET**
 
-[⭐ Star this repo](https://github.com/GEEK-ROOM-KIET/geekroom-kiet) • [🐛 Report Bug](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues) • [💡 Request Feature](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues) • [📚 Documentation](FOLDER_STRUCTURE.md)
+[⭐ Star this repo](https://github.com/GEEK-ROOM-KIET/geekroom-kiet)
 
 </div>
