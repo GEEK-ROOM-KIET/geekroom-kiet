@@ -11,6 +11,7 @@ interface FormData {
 
 export default function ContactSection() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -20,18 +21,14 @@ export default function ContactSection() {
 
   // Check if mobile on component mount
   useEffect(() => {
+    setIsClient(true);
     const checkMobile = () => {
-      if (typeof window !== 'undefined') {
-        setIsMobile(window.innerWidth < 768);
-      }
+      setIsMobile(window.innerWidth < 768);
     };
     
     checkMobile();
-    
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', checkMobile);
-      return () => window.removeEventListener('resize', checkMobile);
-    }
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -79,7 +76,7 @@ export default function ContactSection() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left side content */}
           <div className="w-full md:w-1/3 space-y-6 order-1">
-            {!isMobile ? (
+            {!isClient || !isMobile ? (
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                 HAVE A QUESTION?
               </h1>
