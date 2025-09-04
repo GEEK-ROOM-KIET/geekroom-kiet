@@ -6,6 +6,18 @@
 
 </div>
 
+## 📑 Table of Contents
+
+- [About](#-about)
+- [Features](#-features)
+- [Quick Start](#-quick-start)
+- [Project Structure](#-project-structure)
+- [Tech Stack](#-tech-stack)
+- [Contributing](#-contributing)
+- [Documentation](#-documentation)
+- [Contact](#-contact)
+- [Acknowledgments](#-acknowledgments)
+
 ## 📖 About
 
 **Geek Room KIET** is the official website for the Geek Room chapter at KIET (Krishna Institute of Engineering and Technology). We're a passionate community of students dedicated to fostering a dynamic tech culture through interdisciplinary learning, hands-on workshops, coding sessions, and collaborative projects.
@@ -15,6 +27,13 @@
 - **Explore cutting-edge technologies** and build innovative projects
 - **Foster collaboration** through workshops, competitions, and team projects
 - **Create a supportive space** for students to connect, learn, and make a lasting impact
+
+### 📚 Documentation
+- **[Project Structure](FOLDER_STRUCTURE.md)** - Complete folder organization guide
+- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
+- **[API Documentation](docs/api/)** - API endpoints and usage
+- **[Component Docs](docs/components/)** - Component library documentation
+- **[Deployment Guide](docs/deployment/)** - Deployment instructions
 
 ---
 
@@ -88,8 +107,9 @@
 
 ### **Next Steps**
 - **Want to contribute?** Check out our [Contributing Guide](CONTRIBUTING.md)
-- **Need help?** Open an [issue](https://github.com/your-username/geekroom-kiet/issues)
+- **Need help?** Open an [issue](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues)
 - **Have questions?** Join our community discussions
+- **Explore the codebase?** Read our [Project Structure Guide](FOLDER_STRUCTURE.md)
 
 ---
 
@@ -97,36 +117,71 @@
 
 ```
 geekroom-kiet/
-├── public/                 # Static assets
-│   ├── logo.png           # Main logo
-│   ├── *.jpg              # Gallery images
-│   └── *.png              # Team member photos
+├── public/                          # Static assets
+│   ├── images/                      # Image assets organized by category
+│   │   ├── team/                    # Team member photos
+│   │   ├── events/                  # Event photos
+│   │   ├── gallery/                 # Gallery images
+│   │   └── logos/                   # Logo variations
+│   ├── icons/                       # Icon files
+│   ├── favicon.ico                  # Favicon
+│   └── og-image.png                # Open Graph image
 ├── src/
-│   ├── app/               # Next.js App Router
-│   │   ├── globals.css    # Global styles
-│   │   ├── layout.tsx     # Root layout
-│   │   ├── page.tsx       # Homepage
-│   │   ├── blogs/         # Blog pages
-│   │   ├── events/        # Events pages
-│   │   ├── gallery/       # Gallery pages
-│   │   ├── join-us/       # Join us page
-│   │   ├── projects/      # Projects pages
-│   │   └── team/          # Team pages
-│   ├── components/        # React components
-│   │   ├── ui/            # Reusable UI components
-│   │   ├── ContactSection.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Gallery.tsx
-│   │   ├── Navbar.tsx
-│   │   └── WhyJoinUsSection.tsx
-│   └── lib/               # Utility functions
-│       └── utils.ts
-├── CONTRIBUTING.md        # Contribution guidelines
-├── package.json           # Dependencies and scripts
-├── tailwind.config.ts     # Tailwind configuration
-├── tsconfig.json          # TypeScript configuration
-└── next.config.js         # Next.js configuration
+│   ├── app/                        # Next.js App Router
+│   │   ├── api/                    # API routes
+│   │   ├── globals.css             # Global styles
+│   │   ├── layout.tsx              # Root layout
+│   │   ├── page.tsx                # Homepage
+│   │   ├── blogs/                  # Blog pages
+│   │   ├── events/                 # Events pages
+│   │   ├── gallery/                # Gallery pages
+│   │   ├── join-us/                # Join us page
+│   │   ├── projects/               # Projects pages
+│   │   └── team/                   # Team pages
+│   ├── components/                 # React components
+│   │   ├── ui/                     # Reusable UI components
+│   │   ├── layout/                 # Layout components
+│   │   ├── features/               # Feature-based components
+│   │   │   ├── contact/            # Contact feature
+│   │   │   ├── events/             # Events feature
+│   │   │   ├── projects/           # Projects feature
+│   │   │   ├── team/               # Team feature
+│   │   │   ├── gallery/            # Gallery feature
+│   │   │   └── blogs/              # Blogs feature
+│   │   ├── common/                 # Common components
+│   │   └── providers/              # Context providers
+│   ├── hooks/                      # Custom React hooks
+│   │   ├── useLocalStorage.ts
+│   │   ├── useIntersectionObserver.ts
+│   │   ├── useDebounce.ts
+│   │   └── index.ts
+│   ├── types/                      # TypeScript definitions
+│   │   ├── index.ts                # Main types
+│   │   ├── api.ts                  # API types
+│   │   └── components.ts           # Component types
+│   ├── utils/                      # Utility functions
+│   │   ├── api.ts                  # API client
+│   │   ├── validation.ts           # Form validation
+│   │   ├── format.ts               # Data formatting
+│   │   └── index.ts
+│   ├── constants/                  # Application constants
+│   │   └── index.ts
+│   ├── lib/                        # Library code
+│   │   └── utils.ts
+│   └── data/                       # Static data
+├── docs/                          # Documentation
+├── tests/                         # Test files
+├── scripts/                       # Build scripts
+├── .github/                       # GitHub workflows
+├── CONTRIBUTING.md                # Contribution guidelines
+├── FOLDER_STRUCTURE.md            # Detailed folder structure
+├── package.json                   # Dependencies and scripts
+├── tailwind.config.ts             # Tailwind configuration
+├── tsconfig.json                  # TypeScript configuration
+└── next.config.js                 # Next.js configuration
 ```
+
+> 📋 **Detailed Structure**: See [FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md) for a comprehensive breakdown of the ideal GSoC-level project organization.
 
 ---
 ## 🎨 Tech Stack
@@ -155,6 +210,8 @@ geekroom-kiet/
 ## 🤝 Contributing
 
 We welcome contributions from the community! Please follow these steps to get started:
+
+> 📋 **Before you start**: Make sure to read our [Contributing Guide](CONTRIBUTING.md) for detailed guidelines and best practices.
 
 ### **Step 1: Fork the Repository**
 1. Go to the [Geek Room KIET repository](https://github.com/GEEK-ROOM-KIET/geekroom-kiet)
@@ -240,6 +297,7 @@ git push origin main
 
 ### **📋 Development Guidelines**
 - **Read our [Contributing Guide](CONTRIBUTING.md)** for detailed guidelines
+- **Understand our [Project Structure](FOLDER_STRUCTURE.md)** before making changes
 - Follow the existing code style and patterns
 - Write clear, descriptive commit messages
 - Test your changes locally before submitting
@@ -248,10 +306,50 @@ git push origin main
 - Ask questions if you're unsure about anything
 
 ### **🐛 Finding Issues to Work On**
-1. Check the [Issues tab](https://github.com/your-username/geekroom-kiet/issues)
+1. Check the [Issues tab](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues)
 2. Look for issues labeled `good first issue` or `help wanted`
 3. Comment on the issue to express interest
 4. Wait for assignment before starting work
+
+### **📖 Additional Resources**
+- **[Component Documentation](docs/components/)** - Learn about our UI components
+- **[API Documentation](docs/api/)** - Understand our API endpoints
+- **[Deployment Guide](docs/deployment/)** - Learn how to deploy the project
+
+---
+
+## 📚 Documentation
+
+Our project includes comprehensive documentation to help you understand and contribute to the codebase:
+
+### **📁 Project Organization**
+- **[FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md)** - Complete guide to our project structure and organization principles
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Detailed contributing guidelines and workflow
+
+### **🔧 Development Resources**
+- **[Component Library](docs/components/)** - Documentation for all UI components
+- **[API Reference](docs/api/)** - Complete API documentation with examples
+- **[Deployment Guide](docs/deployment/)** - Step-by-step deployment instructions
+
+### **📖 Additional Guides**
+- **[Code Style Guide](docs/contributing/code-style.md)** - Coding standards and conventions
+- **[Testing Guide](docs/contributing/testing.md)** - How to write and run tests
+- **[Performance Guide](docs/contributing/performance.md)** - Performance optimization tips
+
+### **🛠️ Quick Reference**
+- **[Environment Setup](docs/deployment/environment.md)** - Environment variables and configuration
+- **[Troubleshooting](docs/contributing/troubleshooting.md)** - Common issues and solutions
+- **[FAQ](docs/contributing/faq.md)** - Frequently asked questions
+
+---
+
+## 📞 Contact
+
+- **Website**: [geekroom-kiet.vercel.app](https://geekroom-kiet.vercel.app)
+- **Email**: [Contact Form](https://geekroom-kiet.vercel.app/#contact)
+- **GitHub**: [github.com/GEEK-ROOM-KIET/geekroom-kiet](https://github.com/GEEK-ROOM-KIET/geekroom-kiet)
+- **Documentation**: [Project Docs](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/tree/main/docs)
+- **Issues**: [Report Bug](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues)
 
 ---
 
@@ -267,5 +365,7 @@ git push origin main
 <div align="center">
 
 **Made with ❤️ by Geek Room KIET**
+
+[⭐ Star this repo](https://github.com/GEEK-ROOM-KIET/geekroom-kiet) • [🐛 Report Bug](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues) • [💡 Request Feature](https://github.com/GEEK-ROOM-KIET/geekroom-kiet/issues) • [📚 Documentation](FOLDER_STRUCTURE.md)
 
 </div>
