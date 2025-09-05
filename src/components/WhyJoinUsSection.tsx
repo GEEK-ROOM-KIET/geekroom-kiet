@@ -354,7 +354,7 @@ const WhyJoinUsSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 mt-10">
             <h2 
               ref={titleRef}
               className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF2D55] to-[#786EFF]"
