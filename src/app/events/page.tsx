@@ -98,7 +98,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 const event = {
   id: "hack-summit",
   date: "10 March 2025",
-  upcoming: true,
+  upcoming: false,
   title: "Basha Bandhu",
   description:
     "Hosted by MLSA-KIET X Geek Room KIET, Basha Bnadhu is a 24-hour in-person ideathon.",
@@ -133,9 +133,9 @@ export default function EventsPage() {
                   <span className="text-sm text-muted-foreground">
                     {event.date}
                   </span>
-                  {event.upcoming && (
-                    <span className="text-sm font-medium text-secondary">
-                      Upcoming
+                  {!event.upcoming && (
+                    <span className="text-sm font-medium text-red-700">
+                      Past
                     </span>
                   )}
                 </div>
@@ -147,15 +147,20 @@ export default function EventsPage() {
               </CardContent>
 
               <CardFooter className="p-6 pt-0">
-                <Link href={`/events/${event.id}`} className="w-full">
-                  <Button
-                    variant="default"
-                    className="w-full bg-primary hover:bg-primary/90"
-                  >
-                    Learn More
-                  </Button>
-                </Link>
-              </CardFooter>
+  <Link
+    href={event.upcoming ? `/events/${event.id}` : "#"}
+    className={`w-full ${!event.upcoming ? "pointer-events-none opacity-50" : ""}`}
+  >
+    <Button
+      variant="default"
+      className="w-full bg-primary hover:bg-primary/90"
+      disabled={!event.upcoming}
+    >
+      Learn More
+    </Button>
+  </Link>
+</CardFooter>
+
             </Card>
           </div>
         </div>
