@@ -15,7 +15,6 @@
 - [Tech Stack](#-tech-stack)
 - [Contributing](#-contributing)
 - [Documentation](#-documentation)
-- [Contact](#-contact)
 - [Acknowledgments](#-acknowledgments)
 
 ## 📖 About
@@ -31,9 +30,6 @@
 ### 📚 Documentation
 - **[Project Structure](FOLDER_STRUCTURE.md)** - Complete folder organization guide
 - **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
-- **[API Documentation](docs/api/)** - API endpoints and usage
-- **[Component Docs](docs/components/)** - Component library documentation
-- **[Deployment Guide](docs/deployment/)** - Deployment instructions
 
 ---
 
@@ -310,11 +306,6 @@ git push origin main
 2. Look for issues labeled `good first issue` or `help wanted` to start with open-source
 3. Comment on the issue to express interest
 4. Wait for assignment before starting work
-
-### **📖 Additional Resources**
-- **[Component Documentation](docs/components/)** - Learn about our UI components
-- **[API Documentation](docs/api/)** - Understand our API endpoints
-- **[Deployment Guide](docs/deployment/)** - Learn how to deploy the project
 
 ---
 
