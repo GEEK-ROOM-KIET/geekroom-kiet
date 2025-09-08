@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Linkedin } from "lucide-react";
+import { Github } from "lucide-react";
 import { gsap } from "gsap";
 
 // Team member data
@@ -19,7 +20,7 @@ const teamMembers = [
     image: "/rehan.png",
     bio: "Leading the tech team and driving innovation across all projects.",
     linkedin: "https://www.linkedin.com/in/rehan-ahmad-2712r/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/rehan1360",
   },
   {
     id: 2,
@@ -28,7 +29,7 @@ const teamMembers = [
     image: "/diksha.png",
     bio: "Organizing and managing all community events and workshops.",
     linkedin: "https://www.linkedin.com/in/diksha-jha-8368a0295/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/dikshajha25",
   },
   {
     id: 3,
@@ -37,7 +38,7 @@ const teamMembers = [
     image: "/sarthak.png",
     bio: "Leading the community and communication.",
     linkedin: "https://www.linkedin.com/in/sarthak-stranger/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/XSTRANGER-7",
   },
   {
     id: 4,
@@ -46,7 +47,7 @@ const teamMembers = [
     image: "/vinayak.png",
     bio: "Creating and managing all tech support for geekroom",
     linkedin: "https://www.linkedin.com/in/vinayakrastogi3010/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/VinVorteX",
   },
   {
     id: 5,
@@ -55,7 +56,7 @@ const teamMembers = [
     image: "/arpit.png",
     bio: "Creating visual identity and promotional materials for all events.",
     linkedin: "https://www.linkedin.com/in/arpit-goswami03/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/arpitgoswami03",
   },
   {
     id: 6,
@@ -64,7 +65,7 @@ const teamMembers = [
     image: "/nishant.jpg",
     bio: "Coordinating marketing research methodologies.",
     linkedin: "https://www.linkedin.com/in/thenishantnayan/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/thenishantnayan",
   },
   {
     id: 7,
@@ -73,14 +74,14 @@ const teamMembers = [
     image: "/sunny.png",
     bio: "Making content that attracts mass.",
     linkedin: "https://www.linkedin.com/in/sunny-kanojiya-248897236/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/sunnykanojiya",
   },
   {
     id: 8,
     name: "Raj Singh",
     role: "Treasurer",
     image: "/raj.png",
-    bio: "Making content that attracts mass.",
+    bio: "Managing funds, accounts, and budgeting.",
     linkedin: "https://www.linkedin.com/in/raj-singh-5222a5295/",
     github: "https://github.com/rajsingh19",
   },
@@ -89,9 +90,9 @@ const teamMembers = [
     name: "Devansh Agrahari",
     role: "Sponsorship Head",
     image: "/devansh.png",
-    bio: "Making content that attracts mass.",
+    bio: "Building partnerships and securing sponsors.",
     linkedin: "https://www.linkedin.com/in/devansh-agrahari-15874229b/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/dagrahari",
   },
   {
     id: 10,
@@ -100,7 +101,7 @@ const teamMembers = [
     image: "/yash.png",
     bio: "Managing community and roles distribution.",
     linkedin: "https://www.linkedin.com/in/yash-yadav23/",
-    github: "https://github.com/rajsingh19",
+    github: "https://github.com/YASH-YADAV-dynamo",
   }
 ];
 
@@ -335,7 +336,23 @@ export default function TeamPage() {
                     >
                       <Linkedin size={18} />
                     </a>
+                 
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-white transition-colors p-2 rounded-full"
+                      style={{ 
+                        backgroundColor: `${currentColor}20`,
+                        border: `1px solid ${currentColor}30`
+                      }}
+                    >
+                      <Github size={18} />
+                    </a>
                   </div>
+        
+
+
                 </div>
               </Card>
               );
