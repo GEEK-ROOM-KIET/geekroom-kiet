@@ -146,12 +146,12 @@ const GalleryCarousel = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-black to-gray-900 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 
-            ref={titleRef}
-            className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF2D55] to-[#786EFF] mb-4"
-          >
-            Highlights from the Past
-          </h2>
+<h2 className="text-6xl md:text-5xl font-bold mb-4">
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF2D55] to-[#786EFF]">
+    Highlights from the Past
+  </span>
+</h2>
+
           <p className="text-gray-300 max-w-2xl mx-auto">
             Explore our journey through memorable events, workshops, and community gatherings
           </p>

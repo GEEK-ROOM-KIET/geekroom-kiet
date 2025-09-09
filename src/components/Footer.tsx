@@ -142,7 +142,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a> */}
               <a
-                href="https://www.instagram.com/geekroom_kiet//"
+                href="https://www.instagram.com/geekroom_kiet/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors"
