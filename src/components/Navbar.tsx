@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/events", label: "Events" },
-  { href: "/projects", label: "Projects" },
+  // { href: "/projects", label: "Projects" },
   // { href: "/gallery", label: "Gallery" },
   { href: "/team", label: "Team" },
 ];
@@ -53,7 +53,7 @@ export default function Navbar() {
   return (
     <>
       {/* Main Navbar Container */}
-      <header className="fixed top-0 left-0 w-full z-50 flex justify-center items-center">
+      <header className="fixed top-0 left-0 w-full z-40 flex justify-center items-center">
         <nav className="w-[90%] h-full mx-5 my-4 bg-black-900/90 backdrop-blur-[50px] rounded-2xl shadow-lg border border-gray-700/30">
           <div className="w-full h-24 lg:h-20 flex items-center">
             {/* Left Container - Logo */}

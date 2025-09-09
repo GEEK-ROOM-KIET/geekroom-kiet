@@ -305,21 +305,21 @@ const WhyJoinUsSection = () => {
   // Avatar data with team member photos
   const avatarData = [
     {
-      src: "/rehan.png",
+      src: "/team members/rehan.png",
       alt: "Team Member 1",
       borderColor: "#00C8B5",
       top: 120,
       left: 50
     },
     {
-      src: "/sunny.png", 
+      src: "/team members/sunny.png", 
       alt: "Team Member 2",
       borderColor: "#FF2D55",
       top: 150,
       left: 290
     },
     {
-      src: "/yash.png",
+      src: "/team members/yash.png",
       alt: "Team Member 3", 
       borderColor: "#786EFF",
       top: 290,
