@@ -75,7 +75,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left side content */}
-          <div className="w-full md:w-1/3 space-y-6 order-1">
+          <div className="w-full md:w-1/2 space-y-6 order-1">
             {!isClient || !isMobile ? (
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                 HAVE A QUESTION?
@@ -91,7 +91,7 @@ export default function ContactSection() {
             </p>
           </div>
 
-          {/* Middle Image */}
+          {/* Middle Image
           <div className="w-1 md:w-1/4 order-2 flex justify-center">
             <div className="relative w-24 h-24 md:w-20 md:h-20">
               <Image
@@ -102,10 +102,10 @@ export default function ContactSection() {
                 priority
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Right side form */}
-          <div className="w-full md:w-2/5 order-3">
+          <div className="w-full md:w-1/2 order-2">
             <form
               onSubmit={handleSubmit}
               className="space-y-6 p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-700/30"
