@@ -25,7 +25,7 @@ export default function ContactSection() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -41,24 +41,24 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
       // Here you would typically send the form data to your backend
       // For now, we'll just show a success message
       setResponseMessage('Thank you for your message! We\'ll get back to you soon.');
-      
+
       // Reset form
       setFormData({
         name: '',
         email: '',
         message: ''
       });
-      
+
       // Clear message after 5 seconds
       setTimeout(() => {
         setResponseMessage('');
       }, 5000);
-      
+
     } catch (error) {
       setResponseMessage('Sorry, there was an error sending your message. Please try again.');
     }
@@ -73,7 +73,7 @@ export default function ContactSection() {
       }}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col items-center justify-center gap-12">
           {/* Left side content */}
           <div className="w-full md:w-1/3 space-y-6 order-1">
             {!isClient || !isMobile ? (
@@ -91,28 +91,42 @@ export default function ContactSection() {
             </p>
           </div>
 
-          {/* Middle Image */}
-          <div className="w-1 md:w-1/4 order-2 flex justify-center">
-            <div className="relative w-24 h-24 md:w-20 md:h-20">
-              <Image
-                src="/emailc.png"
-                alt="Contact Us"
-                fill
-                className="object-contain rounded-lg"
-                priority
-              />
-            </div>
-          </div>
+
 
           {/* Right side form */}
           <div className="w-full md:w-2/5 order-3">
+
             <form
               onSubmit={handleSubmit}
-              className="space-y-6 p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-700/30"
+              className="space-y-6 p-8 rounded-2xl  bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-700/30"
               style={{
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 8px 30px rgba(255, 255, 255, 0.05)',
               }}
             >
+              {/* Middle Image */}
+              <div className="w-full flex items-center justify-center mb-6 gap-4">
+                <div className="relative w-16 h-16 md:w-20 md:h-20">
+                  <Image
+                    src="/emailc.png"
+                    alt="Contact Us"
+                    fill
+                    className="object-contain rounded-lg"
+                    priority
+                  />
+                </div>
+
+                <hr className="flex-1 border-gray-500/50 border-dashed" />
+
+                <div className="relative w-16 h-16 md:w-20 md:h-20">
+                  <Image
+                    src="/logo.png"
+                    alt="geekroom logo"
+                    fill
+                    className="object-contain rounded-lg"
+                    priority
+                  />
+                </div>
+              </div>
               <div>
                 <input
                   type="text"
@@ -158,7 +172,7 @@ export default function ContactSection() {
               >
                 Send Message
               </button>
-              
+
               {responseMessage && (
                 <div className="p-4 rounded-xl bg-green-500/20 border border-green-500/30">
                   <p className="text-green-300 text-center font-medium">{responseMessage}</p>
