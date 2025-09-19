@@ -353,9 +353,9 @@ export default function Home() {
                 ></div>
               </div>
               <div className="team-content space-y-6 relative" style={{ zIndex: 20 }}>
-                <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>Robotics</h3>
+                <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>PR & SPONSORSHIP</h3>
                 <p className="text-gray-300 leading-relaxed text-base" style={{ opacity: 1 }}>
-                  The Robotics team empowers members to design, build, and program robots through engaging projects and interactive workshops.
+                  The PR & Sponsorship team builds strong industry connections and promotes our initiatives through strategic outreach, branding, and collaborative partnerships.
                 </p>
               </div>
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FF5722]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }}></div>
