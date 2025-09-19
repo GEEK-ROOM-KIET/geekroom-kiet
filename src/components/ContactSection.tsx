@@ -40,29 +40,42 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      // Here you would typically send the form data to your backend
-      // For now, we'll just show a success message
-      setResponseMessage('Thank you for your message! We\'ll get back to you soon.');
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-
-      // Clear message after 5 seconds
-      setTimeout(() => {
-        setResponseMessage('');
-      }, 5000);
-
-    } catch (error) {
-      setResponseMessage('Sorry, there was an error sending your message. Please try again.');
+    if (!res.ok) {
+      const errorData = await res.json();
+      setResponseMessage(
+        errorData.errors
+          ? errorData.errors.map((err: any) => err.message).join(", ")
+          : "Something went wrong"
+      );
+      return;
     }
-  };
+
+    const data = await res.json();
+    setResponseMessage(data.message || "Message sent successfully!");
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+    setTimeout(() => setResponseMessage(""), 5000);
+  } catch (error) {
+    setResponseMessage("Sorry, there was an error sending your message. Please try again.");
+  }
+};
+
 
   return (
     <div
