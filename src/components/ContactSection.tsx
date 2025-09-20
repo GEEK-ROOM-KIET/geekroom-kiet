@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
 
 interface FormData {
   name: string;
@@ -72,40 +75,30 @@ export default function ContactSection() {
         marginBottom: "50px"
       }}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-8 md:px-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left side content */}
-          <div className="w-full md:w-1/2 space-y-6 order-1">
-            {!isClient || !isMobile ? (
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                HAVE A QUESTION?
-              </h1>
-            ) : (
-              <h1 className="text-3xl font-bold text-white text-center">
-                HAVE A QUESTION?
-              </h1>
+          <div className="w-full md:w-1/2 space-y-6 order-1 flex flex-col items-center">
+            {/* Lottie Animation */}
+            {isClient && (
+              <div className="w-64 h-64 md:w-80 md:h-80">
+                <Lottie
+                  loop
+                  path="https://lottie.host/fac86623-a350-45e0-a3b0-1eca0167786d/SmFAUCiEvD.json"
+                  play
+                  speed={0.5}
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
             )}
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-300 leading-relaxed text-center md:text-left px-4 md:px-0">
               Send us your query and our team will get back to you as soon as
               possible!!
             </p>
           </div>
 
-          {/* Middle Image
-          <div className="w-1 md:w-1/4 order-2 flex justify-center">
-            <div className="relative w-24 h-24 md:w-20 md:h-20">
-              <Image
-                src="/emailc.png"
-                alt="Contact Us"
-                fill
-                className="object-contain rounded-lg"
-                priority
-              />
-            </div>
-          </div> */}
-
           {/* Right side form */}
-          <div className="w-full md:w-1/2 order-2">
+          <div className="w-full md:w-2/5 order-2">
             <form
               onSubmit={handleSubmit}
               className="space-y-6 p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-700/30"
