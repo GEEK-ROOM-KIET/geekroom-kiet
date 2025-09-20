@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
 
 interface FormData {
   name: string;
@@ -78,68 +81,44 @@ export default function ContactSection() {
 
 
   return (
-    <div
+  <div
       className="flex justify-center items-center py-16 md:py-24"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.05)",
         marginBottom: "50px"
       }}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center gap-12">
+      <div className="container mx-auto px-8 md:px-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left side content */}
-          <div className="w-full md:w-1/3 space-y-6 order-1">
-            {!isClient || !isMobile ? (
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                HAVE A QUESTION?
-              </h1>
-            ) : (
-              <h1 className="text-3xl font-bold text-white text-center">
-                HAVE A QUESTION?
-              </h1>
+          <div className="w-full md:w-1/2 space-y-6 order-1 flex flex-col items-center">
+            {/* Lottie Animation */}
+            {isClient && (
+              <div className="w-64 h-64 md:w-80 md:h-80">
+                <Lottie
+                  loop
+                  path="https://lottie.host/fac86623-a350-45e0-a3b0-1eca0167786d/SmFAUCiEvD.json"
+                  play
+                  speed={0.5}
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
             )}
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-300 leading-relaxed text-center md:text-left px-4 md:px-0">
               Send us your query and our team will get back to you as soon as
               possible!!
             </p>
           </div>
 
-
-
           {/* Right side form */}
-          <div className="w-full md:w-2/5 order-3">
-
+          <div className="w-full md:w-2/5 order-2">
             <form
               onSubmit={handleSubmit}
-              className="space-y-6 p-8 rounded-2xl  bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-700/30"
+              className="space-y-6 p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-gray-700/30"
               style={{
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 8px 30px rgba(255, 255, 255, 0.05)',
               }}
             >
-              {/* Middle Image */}
-              <div className="w-full flex items-center justify-center mb-6 gap-4">
-                <div className="relative w-16 h-16 md:w-20 md:h-20">
-                  <Image
-                    src="/emailc.png"
-                    alt="Contact Us"
-                    fill
-                    className="object-contain rounded-lg"
-                    priority
-                  />
-                </div>
-
-                <hr className="flex-1 border-gray-500/50 border-dashed" />
-
-                <div className="relative w-16 h-16 md:w-20 md:h-20">
-                  <Image
-                    src="/logo.png"
-                    alt="geekroom logo"
-                    fill
-                    className="object-contain rounded-lg"
-                    priority
-                  />
-                </div>
-              </div>
               <div>
                 <input
                   type="text"
@@ -185,7 +164,7 @@ export default function ContactSection() {
               >
                 Send Message
               </button>
-
+              
               {responseMessage && (
                 <div className="p-4 rounded-xl bg-green-500/20 border border-green-500/30">
                   <p className="text-green-300 text-center font-medium">{responseMessage}</p>
