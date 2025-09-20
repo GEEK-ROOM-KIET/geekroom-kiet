@@ -85,7 +85,7 @@ const GalleryCarousel = () => {
         </div>
 
         {/* 3D Cylindrical Carousel */}
-        <div className="relative w-full h-[600px] md:h-[700px] flex items-start justify-center pt-16">
+        <div className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] flex items-start justify-center pt-8 md:pt-16">
           <div
             className={`${styles.cylindricalCarousel} ${isPlaying ? styles.playing : styles.paused}`}
             onMouseEnter={handleMouseEnter}
