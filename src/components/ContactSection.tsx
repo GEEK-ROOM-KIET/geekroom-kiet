@@ -80,7 +80,7 @@ export default function ContactSection() {
 
 
   return (
-       <div
+  <div
       className="flex justify-center items-center py-16 md:py-24"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.05)",
