@@ -147,18 +147,18 @@ export default function EventsPage() {
               </CardContent>
 
               <CardFooter className="p-6 pt-0">
-  <Link
-    href={event.upcoming ? `/events/${event.id}` : "#"}
-    className={`w-full ${!event.upcoming ? "pointer-events-none opacity-50" : ""}`}
+ <Link
+  href="/events/basha-bandhu"
+  className="w-full"
+>
+  <Button
+    variant="default"
+    className="w-full bg-primary hover:bg-primary/90"
   >
-    <Button
-      variant="default"
-      className="w-full bg-primary hover:bg-primary/90"
-      disabled={!event.upcoming}
-    >
-      Learn More
-    </Button>
-  </Link>
+    Learn More
+  </Button>
+</Link>
+
 </CardFooter>
 
             </Card>
