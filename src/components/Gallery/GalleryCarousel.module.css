@@ -1,0 +1,56 @@
+/* 3D Cylindrical Carousel Styles */
+
+.cylindricalCarousel {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  animation: autoRun 30s linear infinite;
+}
+
+.cylindricalCarousel.paused {
+  animation-play-state: paused;
+}
+
+.cylindricalCarousel.playing {
+  animation-play-state: running;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.carouselItem {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(420px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1023px) {
+  .cylindricalCarousel {
+    width: 200px;
+    height: 260px;
+  }
+  
+  .carouselItem {
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(350px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cylindricalCarousel {
+    width: 150px;
+    height: 190px;
+  }
+  
+  .carouselItem {
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(250px);
+  }
+}
