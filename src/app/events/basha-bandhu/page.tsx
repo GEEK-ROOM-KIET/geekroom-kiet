@@ -27,9 +27,9 @@ export default function BashaBandhuPage() {
 
       <h3 className="text-xl font-bold mt-6 mb-2">🏆 Winners:</h3>
       <ul className="list-disc pl-6 mb-4">
-        <li><strong>1st Prize:</strong> Team Alpha – Project ABC</li>
-        <li><strong>2nd Prize:</strong> Team Beta – Project XYZ</li>
-        <li><strong>3rd Prize:</strong> Team Gamma – Project DEF</li>
+        <li><strong>1st Prize:</strong> Team Alpha </li>
+        <li><strong>2nd Prize:</strong> Team Beta </li>
+        <li><strong>3rd Prize:</strong> Team Gamma </li>
       </ul>
 
       <p className="mb-4">
