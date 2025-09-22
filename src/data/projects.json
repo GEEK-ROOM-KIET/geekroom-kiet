@@ -1,0 +1,412 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Smart Campus Navigator",
+      "description": "An intelligent navigation system for KIET campus that helps students and visitors find their way around easily. Features real-time location tracking, indoor mapping, and smart routing algorithms.",
+      "fullDescription": "Smart Campus Navigator is a comprehensive digital solution designed to enhance the navigation experience within KIET campus. The system combines cutting-edge technologies like GPS tracking, indoor positioning systems, and machine learning algorithms to provide accurate and efficient navigation assistance. Users can easily locate classrooms, laboratories, cafeterias, libraries, and other campus facilities through an intuitive mobile interface.",
+      "category": "Mobile Apps",
+      "status": "completed",
+      "techStack": [
+        "React Native",
+        "Node.js",
+        "MongoDB",
+        "Socket.io",
+        "Google Maps API",
+        "Firebase"
+      ],
+      "features": [
+        "Real-time GPS navigation",
+        "Indoor mapping system",
+        "Voice-guided directions",
+        "Campus facility finder",
+        "Emergency location sharing",
+        "Offline map support"
+      ],
+      "team": [
+        {
+          "name": "Arpit Sharma",
+          "role": "Team Lead & Backend Developer",
+          "avatar": "/team members/arpit.png"
+        },
+        {
+          "name": "Diksha Gupta",
+          "role": "Frontend Developer",
+          "avatar": "/team members/diksha.png"
+        },
+        {
+          "name": "Nishant Kumar",
+          "role": "Mobile App Developer",
+          "avatar": "/team members/nishant.jpg"
+        },
+        {
+          "name": "Raj Patel",
+          "role": "UI/UX Designer",
+          "avatar": "/team members/raj.png"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/geekroom-kiet/smart-campus-navigator",
+        "demo": "https://campus-navigator-demo.netlify.app",
+        "documentation": "https://docs.campus-navigator.com"
+      },
+      "images": [
+        "/1.jpg",
+        "/2.jpg",
+        "/IMG-20250411-WA0031.jpg"
+      ],
+      "startDate": "2024-01-15",
+      "endDate": "2024-06-30",
+      "downloads": "500+",
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "title": "EcoTracker",
+      "description": "A sustainability tracking application that helps users monitor their carbon footprint and adopt eco-friendly practices. Gamifies environmental consciousness with rewards and challenges.",
+      "fullDescription": "EcoTracker is an innovative mobile application designed to promote environmental awareness and sustainable living among college students and the broader community. The app provides comprehensive tools for tracking daily activities and their environmental impact, offering personalized recommendations for reducing carbon footprint. Through gamification elements, users are motivated to adopt eco-friendly habits and compete with friends in sustainability challenges.",
+      "category": "Mobile Apps",
+      "status": "in-progress",
+      "techStack": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Python",
+        "TensorFlow",
+        "REST API"
+      ],
+      "features": [
+        "Carbon footprint calculator",
+        "Eco-friendly habit tracking",
+        "Sustainability challenges",
+        "Community leaderboards",
+        "Environmental impact insights",
+        "Reward system"
+      ],
+      "team": [
+        {
+          "name": "Devansh Singh",
+          "role": "Team Lead & Flutter Developer",
+          "avatar": "/team members/devansh.png"
+        },
+        {
+          "name": "Sunny Verma",
+          "role": "Backend Developer",
+          "avatar": "/team members/sunny.png"
+        },
+        {
+          "name": "Rehan Ali",
+          "role": "Data Scientist",
+          "avatar": "/team members/rehan.png"
+        },
+        {
+          "name": "Sarthak Jain",
+          "role": "UI/UX Designer",
+          "avatar": "/team members/sarthak.png"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/geekroom-kiet/ecotracker",
+        "demo": "https://ecotracker-beta.vercel.app",
+        "figma": "https://figma.com/ecotracker-design"
+      },
+      "images": [
+        "/3.jpg",
+        "/4.jpg",
+        "/IMG-20250411-WA0032.jpg"
+      ],
+      "startDate": "2024-03-01",
+      "endDate": "2024-12-15",
+      "users": "200+",
+      "rating": 4.6
+    },
+    {
+      "id": 3,
+      "title": "CodeCollab",
+      "description": "A collaborative coding platform that enables real-time code sharing, pair programming, and project collaboration for students and developers. Features integrated chat and video calling.",
+      "fullDescription": "CodeCollab is a comprehensive platform designed to facilitate collaborative coding experiences for students, developers, and teams. The platform provides a seamless environment for real-time code sharing, pair programming sessions, and project collaboration. With integrated communication tools including text chat and video calling, CodeCollab bridges the gap between remote and in-person coding experiences, making it easier for teams to work together regardless of their physical location.",
+      "category": "Web Development",
+      "status": "completed",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "WebRTC",
+        "Socket.io",
+        "PostgreSQL",
+        "Docker",
+        "Redis"
+      ],
+      "features": [
+        "Real-time collaborative editing",
+        "Integrated video chat",
+        "Code version control",
+        "Multi-language support",
+        "Screen sharing",
+        "Project templates"
+      ],
+      "team": [
+        {
+          "name": "Vinayak Sharma",
+          "role": "Team Lead & Full-stack Developer",
+          "avatar": "/team members/vinayak.png"
+        },
+        {
+          "name": "Yash Agarwal",
+          "role": "Frontend Developer",
+          "avatar": "/team members/yash.png"
+        },
+        {
+          "name": "Arpit Sharma",
+          "role": "Backend Developer",
+          "avatar": "/team members/arpit.png"
+        },
+        {
+          "name": "Diksha Gupta",
+          "role": "DevOps Engineer",
+          "avatar": "/team members/diksha.png"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/geekroom-kiet/codecollab",
+        "demo": "https://codecollab.geekroom-kiet.com",
+        "documentation": "https://docs.codecollab.com"
+      },
+      "images": [
+        "/IMG-20250411-WA0033.jpg",
+        "/IMG-20250411-WA0034.jpg",
+        "/IMG-20250411-WA0035.jpg"
+      ],
+      "startDate": "2023-09-01",
+      "endDate": "2024-04-30",
+      "users": "1000+",
+      "rating": 4.9
+    },
+    {
+      "id": 4,
+      "title": "AI Study Assistant",
+      "description": "An intelligent study companion that provides personalized learning recommendations, quiz generation, and progress tracking using machine learning algorithms.",
+      "fullDescription": "AI Study Assistant leverages advanced machine learning and natural language processing to create a personalized learning experience for students. The system analyzes individual learning patterns, strengths, and weaknesses to provide customized study plans, generate relevant practice questions, and offer intelligent tutoring support.",
+      "category": "AI/ML",
+      "status": "in-progress",
+      "techStack": [
+        "Python",
+        "TensorFlow",
+        "FastAPI",
+        "React",
+        "PostgreSQL",
+        "OpenAI API"
+      ],
+      "features": [
+        "Personalized study plans",
+        "Automated quiz generation",
+        "Progress analytics",
+        "AI-powered tutoring",
+        "Content recommendation",
+        "Performance insights"
+      ],
+      "team": [
+        {
+          "name": "Rehan Ali",
+          "role": "Team Lead & ML Engineer",
+          "avatar": "/team members/rehan.png"
+        },
+        {
+          "name": "Sunny Verma",
+          "role": "Backend Developer",
+          "avatar": "/team members/sunny.png"
+        },
+        {
+          "name": "Nishant Kumar",
+          "role": "Frontend Developer",
+          "avatar": "/team members/nishant.jpg"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/geekroom-kiet/ai-study-assistant",
+        "demo": "https://ai-study-beta.herokuapp.com"
+      },
+      "images": [
+        "/IMG-20250411-WA0036.jpg",
+        "/IMG-20250411-WA0037.jpg"
+      ],
+      "startDate": "2024-05-01",
+      "endDate": "2024-11-30",
+      "users": "150+",
+      "rating": 4.5
+    },
+    {
+      "id": 5,
+      "title": "Campus Event Manager",
+      "description": "A comprehensive event management system for college events, featuring event creation, registration, ticketing, and real-time updates for attendees.",
+      "fullDescription": "Campus Event Manager is a full-featured event management platform specifically designed for college and university environments. The system streamlines the entire event lifecycle from creation and promotion to registration, attendance tracking, and post-event analytics.",
+      "category": "Web Development",
+      "status": "completed",
+      "techStack": [
+        "MERN Stack",
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "Stripe API"
+      ],
+      "features": [
+        "Event creation and management",
+        "Online registration system",
+        "Payment integration",
+        "QR code ticketing",
+        "Real-time notifications",
+        "Analytics dashboard"
+      ],
+      "team": [
+        {
+          "name": "Yash Agarwal",
+          "role": "Team Lead & Full-stack Developer",
+          "avatar": "/team members/yash.png"
+        },
+        {
+          "name": "Sarthak Jain",
+          "role": "Frontend Developer",
+          "avatar": "/team members/sarthak.png"
+        },
+        {
+          "name": "Vinayak Sharma",
+          "role": "Backend Developer",
+          "avatar": "/team members/vinayak.png"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/geekroom-kiet/campus-event-manager",
+        "demo": "https://events.geekroom-kiet.com"
+      },
+      "images": [
+        "/IMG-20250411-WA0038.jpg",
+        "/1.jpg"
+      ],
+      "startDate": "2023-08-01",
+      "endDate": "2024-02-28",
+      "events": "50+",
+      "rating": 4.7
+    },
+    {
+      "id": 6,
+      "title": "IoT Weather Station",
+      "description": "A comprehensive IoT-based weather monitoring system that collects real-time environmental data and provides detailed weather analytics for the campus.",
+      "fullDescription": "IoT Weather Station is an innovative project that combines hardware and software to create a comprehensive weather monitoring solution for the KIET campus. The system uses various sensors to collect real-time environmental data including temperature, humidity, air pressure, wind speed, and air quality.",
+      "category": "IoT/Hardware",
+      "status": "completed",
+      "techStack": [
+        "Arduino",
+        "Raspberry Pi",
+        "Python",
+        "InfluxDB",
+        "Grafana",
+        "MQTT"
+      ],
+      "features": [
+        "Real-time weather monitoring",
+        "Historical data analysis",
+        "Weather predictions",
+        "Air quality assessment",
+        "Mobile alerts",
+        "Data visualization"
+      ],
+      "team": [
+        {
+          "name": "Raj Patel",
+          "role": "Team Lead & Hardware Engineer",
+          "avatar": "/team members/raj.png"
+        },
+        {
+          "name": "Devansh Singh",
+          "role": "Software Developer",
+          "avatar": "/team members/devansh.png"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/geekroom-kiet/iot-weather-station",
+        "demo": "https://weather.geekroom-kiet.com"
+      },
+      "images": [
+        "/2.jpg",
+        "/3.jpg"
+      ],
+      "startDate": "2023-10-01",
+      "endDate": "2024-03-31",
+      "accuracy": "95%",
+      "rating": 4.6
+    },
+    {
+      "id": 7,
+      "title": "DeCert",
+      "description": "A blockchain-based certificate verification system that ensures authenticity and prevents fraud in educational credentials.",
+      "fullDescription": "DeCert is a revolutionary blockchain platform that provides secure, tamper-proof certificate verification for educational institutions. Using smart contracts and distributed ledger technology, it creates an immutable record of academic achievements.",
+      "category": "Blockchain",
+      "status": "completed",
+      "techStack": [
+        "Solidity",
+        "Ethereum",
+        "Web3.js",
+        "React",
+        "Node.js",
+        "IPFS"
+      ],
+      "features": [
+        "Immutable certificate storage",
+        "Smart contract verification",
+        "QR code generation",
+        "Batch certificate issuance",
+        "Public verification portal",
+        "Mobile verification app"
+      ],
+      "team": [
+        {
+          "name": "Vinayak Sharma",
+          "role": "Team Lead & Blockchain Developer",
+          "avatar": "/team members/vinayak.png"
+        },
+        {
+          "name": "Arpit Sharma",
+          "role": "Smart Contract Developer",
+          "avatar": "/team members/arpit.png"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/geekroom-kiet/decert",
+        "demo": "https://decert.geekroom-kiet.com"
+      },
+      "images": [
+        "/4.jpg",
+        "/IMG-20250411-WA0031.jpg"
+      ],
+      "startDate": "2024-02-01",
+      "endDate": "2024-08-30",
+      "certificates": "1000+",
+      "rating": 4.8
+    }
+  ],
+  "categories": [
+    "All",
+    "Web Development",
+    "Mobile Apps", 
+    "AI/ML",
+    "Blockchain",
+    "IoT/Hardware",
+    "Others"
+  ],
+  "technologies": [
+    "React",
+    "React Native",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "Flutter",
+    "TypeScript",
+    "MongoDB",
+    "PostgreSQL",
+    "Firebase",
+    "TensorFlow",
+    "Docker",
+    "Arduino",
+    "Raspberry Pi"
+  ]
+}
