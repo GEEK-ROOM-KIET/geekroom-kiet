@@ -42,45 +42,45 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (!res.ok) {
-      const errorData = await res.json();
-      setResponseMessage(
-        errorData.errors
-          ? errorData.errors.map((err: any) => err.message).join(", ")
-          : "Something went wrong"
-      );
-      return;
+      if (!res.ok) {
+        const errorData = await res.json();
+        setResponseMessage(
+          errorData.errors
+            ? errorData.errors.map((err: { message: string }) => err.message).join(", ")
+            : "Something went wrong"
+        );
+        return;
+      }
+
+      const data = await res.json();
+      setResponseMessage(data.message || "Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      setTimeout(() => setResponseMessage(""), 5000);
+    } catch (error) {
+      setResponseMessage("Sorry, there was an error sending your message. Please try again.");
     }
-
-    const data = await res.json();
-    setResponseMessage(data.message || "Message sent successfully!");
-
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-
-    setTimeout(() => setResponseMessage(""), 5000);
-  } catch (error) {
-    setResponseMessage("Sorry, there was an error sending your message. Please try again.");
-  }
-};
+  };
 
 
   return (
-  <div
+    <div
       className="flex justify-center items-center py-16 md:py-24"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.05)",
@@ -163,7 +163,7 @@ export default function ContactSection() {
               >
                 Send Message
               </button>
-              
+
               {responseMessage && (
                 <div className="p-4 rounded-xl bg-green-500/20 border border-green-500/30">
                   <p className="text-green-300 text-center font-medium">{responseMessage}</p>

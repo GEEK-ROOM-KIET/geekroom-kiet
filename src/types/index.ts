@@ -201,7 +201,7 @@ export interface NavItem {
 export interface AppError {
   code: string;
   message: string;
-  details?: Record<string, any>;
+  details?: Record<string, unknown>;
   timestamp: Date;
 }
 

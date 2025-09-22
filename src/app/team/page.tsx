@@ -1,6 +1,7 @@
 'use client'; // Required for client-side interactivity
 
-import React, { useEffect, useRef } from "react";
+import type React from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -112,7 +113,7 @@ const GlowingStrips: React.FC<{ cardIndex: number }> = ({ cardIndex }) => {
   useEffect(() => {
     if (stripsRef.current) {
       const strips = stripsRef.current.querySelectorAll('.glow-strip');
-      
+
       strips.forEach((strip, index) => {
         // Random initial positions and rotations
         gsap.set(strip, {
@@ -148,39 +149,39 @@ const GlowingStrips: React.FC<{ cardIndex: number }> = ({ cardIndex }) => {
   }, [cardIndex]);
 
   return (
-    <div 
+    <div
       ref={stripsRef}
       className="absolute inset-0 overflow-hidden pointer-events-none rounded-xl"
     >
       {/* Cyan Strip */}
-      <div 
+      <div
         className="glow-strip absolute w-24 h-1.5 rounded-full blur-sm"
         style={{
           background: 'linear-gradient(90deg, transparent, #00FFFF, transparent)',
           boxShadow: '0 0 15px #00FFFF, 0 0 30px #00FFFF, 0 0 45px #00FFFF'
         }}
       />
-      
+
       {/* Blue Strip */}
-      <div 
+      <div
         className="glow-strip absolute w-20 h-1 rounded-full blur-sm"
         style={{
           background: 'linear-gradient(90deg, transparent, #0080FF, transparent)',
           boxShadow: '0 0 12px #0080FF, 0 0 24px #0080FF, 0 0 36px #0080FF'
         }}
       />
-      
+
       {/* Light Blue Strip */}
-      <div 
+      <div
         className="glow-strip absolute w-22 h-0.5 rounded-full blur-sm"
         style={{
           background: 'linear-gradient(90deg, transparent, #40E0FF, transparent)',
           boxShadow: '0 0 10px #40E0FF, 0 0 20px #40E0FF, 0 0 30px #40E0FF'
         }}
       />
-      
+
       {/* Teal Strip */}
-      <div 
+      <div
         className="glow-strip absolute w-16 h-2 rounded-full blur-sm"
         style={{
           background: 'linear-gradient(90deg, transparent, #008B8B, transparent)',
@@ -199,18 +200,18 @@ export default function TeamPage() {
     cardRefs.current.forEach((card, index) => {
       if (card) {
         const strips = card.querySelectorAll('.glow-strip');
-        
+
         card.addEventListener('mouseenter', () => {
           // Intensify strips on hover
-          strips.forEach((strip) => {
+          for (const strip of strips) {
             gsap.to(strip, {
               opacity: 1,
               scale: 1.2,
               duration: 0.3,
               ease: "power2.out"
             });
-          });
-          
+          }
+
           // Card elevation
           gsap.to(card, {
             y: -8,
@@ -219,18 +220,18 @@ export default function TeamPage() {
             ease: "power2.out"
           });
         });
-        
+
         card.addEventListener('mouseleave', () => {
           // Return strips to normal
-          strips.forEach((strip) => {
+          for (const strip of strips) {
             gsap.to(strip, {
               opacity: 0.3 + Math.random() * 0.7,
               scale: 1,
               duration: 0.4,
               ease: "power2.out"
             });
-          });
-          
+          }
+
           // Return card to normal
           gsap.to(card, {
             y: 0,
@@ -268,7 +269,7 @@ export default function TeamPage() {
               // Cycle through colors for orbiting animation
               const orbitColors = ['#FF2D55', '#00FFFF', '#0080FF']; // Red, Cyan, Blue
               const currentColor = orbitColors[index % 3];
-              
+
               return (
                 <Card
                   key={member.id}
@@ -276,85 +277,85 @@ export default function TeamPage() {
                   className="relative bg-background/30 backdrop-blur-sm border border-white/10 p-4 rounded-xl hover:shadow-lg transition-all duration-300 overflow-hidden"
                   style={{ minHeight: '380px' }} // Make cards more vertical
                 >
-                {/* Glowing Strips Background */}
-                <GlowingStrips cardIndex={index} />
-                
-                {/* Additional Background Effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 rounded-xl pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rounded-xl pointer-events-none" />
-                
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  {/* Clickable Avatar with Dynamic Colored Rotating Animation */}
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative mb-6 group"
-                  >
-                    <div 
-                      className="absolute inset-0 rounded-full border-2 group-hover:opacity-75 transition-all duration-300 animate-orbit"
-                      style={{ 
-                        borderColor: `${currentColor}30`,
-                        boxShadow: `0 0 20px ${currentColor}40`
-                      }}
-                    >
-                      <div 
-                        className="absolute w-4 h-4 rounded-full -top-2 left-1/2 transform -translate-x-1/2 animate-spin-orbit"
-                        style={{ 
-                          backgroundColor: currentColor,
-                          boxShadow: `0 0 15px ${currentColor}, 0 0 30px ${currentColor}`
-                        }}
-                      ></div>
-                    </div>
-                    <Avatar className="h-28 w-28 border-3 group-hover:scale-105 transition-all duration-300" 
-                           style={{ 
-                             borderColor: `${currentColor}40`,
-                             boxShadow: `0 0 25px ${currentColor}20`
-                           }}>
-                      <AvatarImage src={member.image} alt={member.name} className="object-cover" />
-                      <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                  </a>
+                  {/* Glowing Strips Background */}
+                  <GlowingStrips cardIndex={index} />
 
-                  <h3 className="text-lg font-semibold mb-2">{member.name}</h3>
-                  <p className="text-sm font-medium mb-3" style={{ color: currentColor }}>{member.role}</p>
+                  {/* Additional Background Effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 rounded-xl pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rounded-xl pointer-events-none" />
 
-                  <p className="text-muted-foreground text-xs mb-4 leading-relaxed px-2">
-                    {member.bio}
-                  </p>
-
-                  <div className="flex space-x-4 mt-auto">
+                  <div className="relative z-10 flex flex-col items-center text-center">
+                    {/* Clickable Avatar with Dynamic Colored Rotating Animation */}
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-white transition-colors p-2 rounded-full"
-                      style={{ 
-                        backgroundColor: `${currentColor}20`,
-                        border: `1px solid ${currentColor}30`
-                      }}
+                      className="relative mb-6 group"
                     >
-                      <Linkedin size={18} />
+                      <div
+                        className="absolute inset-0 rounded-full border-2 group-hover:opacity-75 transition-all duration-300 animate-orbit"
+                        style={{
+                          borderColor: `${currentColor}30`,
+                          boxShadow: `0 0 20px ${currentColor}40`
+                        }}
+                      >
+                        <div
+                          className="absolute w-4 h-4 rounded-full -top-2 left-1/2 transform -translate-x-1/2 animate-spin-orbit"
+                          style={{
+                            backgroundColor: currentColor,
+                            boxShadow: `0 0 15px ${currentColor}, 0 0 30px ${currentColor}`
+                          }}
+                        />
+                      </div>
+                      <Avatar className="h-28 w-28 border-3 group-hover:scale-105 transition-all duration-300"
+                        style={{
+                          borderColor: `${currentColor}40`,
+                          boxShadow: `0 0 25px ${currentColor}20`
+                        }}>
+                        <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                        <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                      </Avatar>
                     </a>
-                 
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-white transition-colors p-2 rounded-full"
-                      style={{ 
-                        backgroundColor: `${currentColor}20`,
-                        border: `1px solid ${currentColor}30`
-                      }}
-                    >
-                      <Github size={18} />
-                    </a>
+
+                    <h3 className="text-lg font-semibold mb-2">{member.name}</h3>
+                    <p className="text-sm font-medium mb-3" style={{ color: currentColor }}>{member.role}</p>
+
+                    <p className="text-muted-foreground text-xs mb-4 leading-relaxed px-2">
+                      {member.bio}
+                    </p>
+
+                    <div className="flex space-x-4 mt-auto">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-white transition-colors p-2 rounded-full"
+                        style={{
+                          backgroundColor: `${currentColor}20`,
+                          border: `1px solid ${currentColor}30`
+                        }}
+                      >
+                        <Linkedin size={18} />
+                      </a>
+
+                      <a
+                        href={member.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-white transition-colors p-2 rounded-full"
+                        style={{
+                          backgroundColor: `${currentColor}20`,
+                          border: `1px solid ${currentColor}30`
+                        }}
+                      >
+                        <Github size={18} />
+                      </a>
+                    </div>
+
+
+
                   </div>
-        
-
-
-                </div>
-              </Card>
+                </Card>
               );
             })}
           </div>
