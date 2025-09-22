@@ -35,8 +35,8 @@ This creates a copy of the project in your GitHub account.
 Clone your fork locally:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/GEEK-ROOM-KIET
-cd repository-name
+git clone https://github.com/YOUR-USERNAME/geekroom-kiet
+cd geekroom-kiet
 ```
 
 ### 3️⃣ Create a New Branch
@@ -62,6 +62,24 @@ git add .
 git commit -m "feat: Add login button to the navbar"
 ```
 
+---
+
+## 🔧 Development Setup
+
+After cloning the repository:
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# The app will be available at http://localhost:3000
+```
+
+---
+
 ## 🔄 Submitting a Pull Request (PR)
 
 ### Step 1: Push Your Branch
@@ -79,7 +97,7 @@ git push origin feat/add-login-button
     - **Base repository:** The official repository
     - **Base branch:** `dev` (⚠️ not `main`)
     - **Head repository:** Your fork
-    - **Compare branch:** Your feature/bugfix branchltw1
+    - **Compare branch:** Your feature/bugfix branch
 
 ### Step 3: Fill Out the PR Template
 Your PR should follow this format:
