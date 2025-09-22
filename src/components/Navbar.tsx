@@ -23,17 +23,18 @@ export default function Navbar() {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 1024px)");
     setIsMobile(mediaQuery.matches);
-    
+
     const handleMediaQueryChange = (event: MediaQueryListEvent) => {
       setIsMobile(event.matches);
     };
-    
+
     mediaQuery.addEventListener("change", handleMediaQueryChange);
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: pathname dependency is intentional to close menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);

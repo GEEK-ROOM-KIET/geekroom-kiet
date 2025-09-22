@@ -23,14 +23,14 @@ export function useIntersectionObserver({
 
   const frozen = entry?.isIntersecting && freezeOnceVisible;
 
-  const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
-    setEntry(entry);
-  };
-
   useEffect(() => {
     const hasIOSupport = !!window.IntersectionObserver;
 
     if (!hasIOSupport || frozen || !node) return;
+
+    const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
+      setEntry(entry);
+    };
 
     const observerParams = { threshold, root, rootMargin };
     const currentObserver = new IntersectionObserver(updateEntry, observerParams);

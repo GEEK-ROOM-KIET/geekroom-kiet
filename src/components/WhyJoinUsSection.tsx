@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef } from "react";
+import type React from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 
@@ -25,29 +26,29 @@ interface FloatingLabelProps {
 }
 
 // Floating Avatar Component
-const FloatingAvatar: React.FC<FloatingAvatarProps> = ({ 
-  src, 
-  alt, 
-  size = "lg", 
-  borderColor, 
-  top, 
-  left, 
-  delay = 0, 
-  id 
+const FloatingAvatar: React.FC<FloatingAvatarProps> = ({
+  src,
+  alt,
+  size = "lg",
+  borderColor,
+  top,
+  left,
+  delay = 0,
+  id
 }) => {
   const avatarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (avatarRef.current) {
       // Initial animation
-      gsap.fromTo(avatarRef.current, 
-        { 
-          opacity: 0, 
+      gsap.fromTo(avatarRef.current,
+        {
+          opacity: 0,
           scale: 0,
           rotation: -180
         },
-        { 
-          opacity: 1, 
+        {
+          opacity: 1,
           scale: 1,
           rotation: 0,
           duration: 0.8,
@@ -107,9 +108,9 @@ const FloatingAvatar: React.FC<FloatingAvatarProps> = ({
           className="object-cover"
           sizes="(max-width: 768px) 64px, 96px"
         />
-        <div 
+        <div
           className="absolute inset-0 rounded-full"
-          style={{ 
+          style={{
             boxShadow: `0 0 20px ${borderColor || '#FF2D55'}40`
           }}
         />
@@ -119,25 +120,25 @@ const FloatingAvatar: React.FC<FloatingAvatarProps> = ({
 };
 
 // Floating Label Component
-const FloatingLabel: React.FC<FloatingLabelProps> = ({ 
-  children, 
-  color, 
-  top, 
-  left, 
-  delay = 0 
+const FloatingLabel: React.FC<FloatingLabelProps> = ({
+  children,
+  color,
+  top,
+  left,
+  delay = 0
 }) => {
   const labelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (labelRef.current) {
       gsap.fromTo(labelRef.current,
-        { 
-          opacity: 0, 
+        {
+          opacity: 0,
           y: 20,
           scale: 0.8
         },
-        { 
-          opacity: 1, 
+        {
+          opacity: 1,
           y: 0,
           scale: 1,
           duration: 0.6,
@@ -162,8 +163,8 @@ const FloatingLabel: React.FC<FloatingLabelProps> = ({
     <div
       ref={labelRef}
       className="absolute font-bold text-lg px-3 py-1 rounded-full border-2 backdrop-blur-sm"
-      style={{ 
-        top: `${top}px`, 
+      style={{
+        top: `${top}px`,
         left: `${left}px`,
         color: color,
         borderColor: color,
@@ -238,12 +239,12 @@ const CenterPoint = () => {
   useEffect(() => {
     if (centerRef.current) {
       gsap.fromTo(centerRef.current,
-        { 
-          opacity: 0, 
+        {
+          opacity: 0,
           scale: 0
         },
-        { 
-          opacity: 1, 
+        {
+          opacity: 1,
           scale: 1,
           duration: 0.8,
           delay: 1.2,
@@ -296,12 +297,12 @@ const WhyJoinUsSection = () => {
     textRefs.current.forEach((text, index) => {
       gsap.fromTo(text,
         { opacity: 0, y: 30 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 0.8, 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
           delay: 0.3 + index * 0.2,
-          ease: "power2.out" 
+          ease: "power2.out"
         }
       );
     });
@@ -317,7 +318,7 @@ const WhyJoinUsSection = () => {
       left: 50
     },
     {
-      src: "/team members/sunny.png", 
+      src: "/team members/sunny.png",
       alt: "Team Member 2",
       borderColor: "#FF2D55",
       top: 150,
@@ -325,7 +326,7 @@ const WhyJoinUsSection = () => {
     },
     {
       src: "/team members/yash.png",
-      alt: "Team Member 3", 
+      alt: "Team Member 3",
       borderColor: "#786EFF",
       top: 290,
       left: 100
@@ -342,7 +343,7 @@ const WhyJoinUsSection = () => {
     },
     {
       label: "Events",
-      color: "#FF2D55", 
+      color: "#FF2D55",
       top: 110,
       left: 250
     },
@@ -360,26 +361,26 @@ const WhyJoinUsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 mt-10">
-            <h2 
+            <h2
               ref={titleRef}
               className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF2D55] to-[#786EFF] pb-2"
             >
               Why Join Us?
             </h2>
-            
+
             <div className="space-y-6 text-gray-300 text-2xl leading-relaxed">
               <p ref={addToTextRefs}>
-                <span className="font-semibold text-[#00C8B5]">Geek Room KIET</span> is a 
-                community dedicated to helping each other get better at coding. Join us in 
-                building meaningful projects together! As an official chapter of Geek Room, 
-                we are committed to fostering a strong tech culture among students who are 
+                <span className="font-semibold text-[#00C8B5]">Geek Room KIET</span> is a
+                community dedicated to helping each other get better at coding. Join us in
+                building meaningful projects together! As an official chapter of Geek Room,
+                we are committed to fostering a strong tech culture among students who are
                 passionate about interdisciplinary learning.
               </p>
-              
+
               <p ref={addToTextRefs}>
-                Our focus is on empowering students to enhance their technical skills, explore 
-                cutting-edge technologies, and collaborate on innovative projects. With a variety 
-                of workshops, coding sessions, and project teams, Geek Room KIET offers a 
+                Our focus is on empowering students to enhance their technical skills, explore
+                cutting-edge technologies, and collaborate on innovative projects. With a variety
+                of workshops, coding sessions, and project teams, Geek Room KIET offers a
                 supportive environment to grow, connect with like-minded peers, and make a lasting impact.
               </p>
             </div>
@@ -390,11 +391,11 @@ const WhyJoinUsSection = () => {
             <div className="absolute inset-0">
               {/* Connecting Lines */}
               <ConnectingLines />
-              
+
               {/* Floating Avatars */}
               {avatarData.map((avatar, index) => (
                 <FloatingAvatar
-                  key={index}
+                  key={`${avatar.src}-${avatar.borderColor}`}
                   id={`avatar-${index}`}
                   src={avatar.src}
                   alt={avatar.alt}
@@ -412,7 +413,7 @@ const WhyJoinUsSection = () => {
               {/* Floating Labels */}
               {labelData.map((label, index) => (
                 <FloatingLabel
-                  key={index}
+                  key={`${label.label}-${label.color}`}
                   color={label.color}
                   top={label.top}
                   left={label.left}

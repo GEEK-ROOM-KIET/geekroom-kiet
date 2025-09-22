@@ -1,9 +1,9 @@
 // API-specific type definitions
 
-import { ApiResponse, PaginatedResponse } from './index';
+import type { ApiResponse, PaginatedResponse } from './index';
 
 // API Endpoints
-export type ApiEndpoint = 
+export type ApiEndpoint =
   | '/api/auth/login'
   | '/api/auth/logout'
   | '/api/auth/register'
@@ -24,7 +24,7 @@ export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 export interface ApiRequest {
   method: HttpMethod;
   endpoint: ApiEndpoint;
-  body?: Record<string, any>;
+  body?: Record<string, unknown>;
   query?: Record<string, string | number | boolean>;
   headers?: Record<string, string>;
 }
@@ -34,7 +34,7 @@ export interface ApiError {
   status: number;
   message: string;
   code?: string;
-  details?: Record<string, any>;
+  details?: Record<string, unknown>;
 }
 
 // Authentication API Types
@@ -177,14 +177,27 @@ export type UsersResponse = PaginatedResponse<{
   joinDate: string;
 }>;
 
+// Team Types
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  email?: string;
+  avatar?: string;
+}
+
+export interface TeamLead extends TeamMember {
+  title: string;
+}
+
 export type TeamsResponse = ApiResponse<{
   id: string;
   name: string;
   description: string;
   icon: string;
   color: string;
-  members: any[];
-  lead: any;
+  members: TeamMember[];
+  lead: TeamLead;
 }[]>;
 
 export type EventsResponse = PaginatedResponse<{

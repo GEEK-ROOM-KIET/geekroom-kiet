@@ -1,4 +1,21 @@
-import { ApiRequest, ApiError, ApiResponse } from '@/types/api';
+import type { ApiResponse } from '@/types/index';
+
+/**
+ * API Error class for handling API-specific errors
+ */
+class ApiError extends Error {
+  public status: number;
+  public code?: string;
+  public details?: Record<string, unknown>;
+
+  constructor(status: number, message: string, code?: string, details?: Record<string, unknown>) {
+    super(message);
+    this.status = status;
+    this.code = code;
+    this.details = details;
+    this.name = 'ApiError';
+  }
+}
 
 /**
  * Generic API client with error handling and type safety
@@ -16,15 +33,21 @@ class ApiClient {
     body,
     query,
     headers = {},
-  }: ApiRequest): Promise<ApiResponse<T>> {
+  }: {
+    method: string;
+    endpoint: string;
+    body?: Record<string, unknown>;
+    query?: Record<string, string | number | boolean>;
+    headers?: Record<string, string>;
+  }): Promise<ApiResponse<T>> {
     try {
       const url = new URL(`${this.baseURL}${endpoint}`);
-      
+
       // Add query parameters
       if (query) {
-        Object.entries(query).forEach(([key, value]) => {
+        for (const [key, value] of Object.entries(query)) {
           url.searchParams.append(key, String(value));
-        });
+        }
       }
 
       const config: RequestInit = {
@@ -65,15 +88,16 @@ class ApiClient {
         };
       }
 
+      const errorMessage = error instanceof Error ? error.message : 'Network error. Please check your connection.';
       return {
         success: false,
-        error: 'Network error. Please check your connection.',
+        error: errorMessage,
       };
     }
   }
 
   // HTTP Methods
-  async get<T>(endpoint: string, query?: Record<string, any>): Promise<ApiResponse<T>> {
+  async get<T>(endpoint: string, query?: Record<string, string | number | boolean>): Promise<ApiResponse<T>> {
     return this.request<T>({
       method: 'GET',
       endpoint,
@@ -81,7 +105,7 @@ class ApiClient {
     });
   }
 
-  async post<T>(endpoint: string, body?: Record<string, any>): Promise<ApiResponse<T>> {
+  async post<T>(endpoint: string, body?: Record<string, unknown>): Promise<ApiResponse<T>> {
     return this.request<T>({
       method: 'POST',
       endpoint,
@@ -89,7 +113,7 @@ class ApiClient {
     });
   }
 
-  async put<T>(endpoint: string, body?: Record<string, any>): Promise<ApiResponse<T>> {
+  async put<T>(endpoint: string, body?: Record<string, unknown>): Promise<ApiResponse<T>> {
     return this.request<T>({
       method: 'PUT',
       endpoint,
@@ -97,7 +121,7 @@ class ApiClient {
     });
   }
 
-  async patch<T>(endpoint: string, body?: Record<string, any>): Promise<ApiResponse<T>> {
+  async patch<T>(endpoint: string, body?: Record<string, unknown>): Promise<ApiResponse<T>> {
     return this.request<T>({
       method: 'PATCH',
       endpoint,

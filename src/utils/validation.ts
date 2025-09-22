@@ -114,11 +114,11 @@ export function validateUrl(url: string): boolean {
 // Error formatting
 export function formatValidationError(error: z.ZodError): Record<string, string> {
   const errors: Record<string, string> = {};
-  
-  error.errors.forEach((err) => {
+
+  for (const err of error.errors) {
     const path = err.path.join('.');
     errors[path] = err.message;
-  });
-  
+  }
+
   return errors;
 }

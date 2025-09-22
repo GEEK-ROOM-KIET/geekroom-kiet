@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "@/components/Navbar"; 
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GalleryCarousel from "@/components/Gallery/GalleryCarousel";
 import WhyJoinUsSection from "@/components/WhyJoinUsSection";
@@ -64,16 +64,16 @@ export default function Home() {
       shapes.forEach((shape, index) => {
         gsap.fromTo(
           shape,
-          { 
-            scale: 0, 
-            opacity: 0 
+          {
+            scale: 0,
+            opacity: 0
           },
-          { 
-            scale: 1, 
-            opacity: 1, 
-            duration: 0.6, 
-            delay: index * 0.15, 
-            ease: "back.out(1.7)" 
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            delay: index * 0.15,
+            ease: "back.out(1.7)"
           }
         );
       });
@@ -99,7 +99,7 @@ export default function Home() {
       );
 
     // Hero section animations
-    const heroTl = gsap.timeline({ 
+    const heroTl = gsap.timeline({
       defaults: { ease: "power3.out" },
       delay: 3.5 // Wait for splash screen to complete
     });
@@ -148,14 +148,14 @@ export default function Home() {
         { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
       );
 
-      teamCards.forEach((card) => {
+      for (const card of teamCards) {
         observer.observe(card);
-      });
+      }
 
       return () => {
-        teamCards.forEach((card) => {
+        for (const card of teamCards) {
           observer.unobserve(card);
-        });
+        }
       };
     }
   }, []);
@@ -180,39 +180,39 @@ export default function Home() {
       >
         <div className="text-center">
           {/* Squid Game inspired geometric shapes */}
-          <div 
+          <div
             ref={splashLogoRef}
             className="relative w-64 h-64 mb-8 mx-auto"
           >
             {/* Triangle */}
-            <div 
+            <div
               className="shape absolute top-0 left-1/2 transform -translate-x-1/2 w-52 h-52"
-              style={{ 
+              style={{
                 clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
                 backgroundColor: "#FF2D55", // Brighter pink from Squid Game
                 boxShadow: "0 0 30px rgba(255, 45, 85, 0.5)",
               }}
-            ></div>
-            
+            />
+
             {/* Circle */}
-            <div 
+            <div
               className="shape absolute top-8 left-1/2 transform -translate-x-1/2 w-40 h-40 rounded-full"
-              style={{ 
+              style={{
                 backgroundColor: "#00C8B5", // Brighter cyan from Squid Game
-                boxShadow: "0 0 30px rgba(0, 200, 181, 0.5)", 
+                boxShadow: "0 0 30px rgba(0, 200, 181, 0.5)",
               }}
-            ></div>
-            
+            />
+
             {/* Square */}
-            <div 
+            <div
               className="shape absolute top-12 left-1/2 transform -translate-x-1/2 w-32 h-32"
-              style={{ 
+              style={{
                 backgroundColor: "#786EFF", // Brighter purple
-                boxShadow: "0 0 30px rgba(120, 110, 255, 0.5)", 
+                boxShadow: "0 0 30px rgba(120, 110, 255, 0.5)",
               }}
-            ></div>
+            />
           </div>
-          
+
           <h1
             ref={splashTextRef}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white"
@@ -266,7 +266,7 @@ export default function Home() {
                 transform: 'translateZ(0)', // Force hardware acceleration
               }}
             >
-              <div 
+              <div
                 className="team-logo mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-8 relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, #FF5722, #FF8A65)',
@@ -276,11 +276,11 @@ export default function Home() {
                 }}
               >
                 <Code className="team-icon text-white h-12 w-12 relative" style={{ zIndex: 25 }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full"></div>
-                <div 
+                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full" />
+                <div
                   className="absolute -inset-2 rounded-full opacity-75 blur-md"
                   style={{ background: 'radial-gradient(circle, rgba(255, 138, 101, 0.3) 0%, transparent 70%)' }}
-                ></div>
+                />
               </div>
               <div className="team-content space-y-6 relative" style={{ zIndex: 20 }}>
                 <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>Tech</h3>
@@ -289,7 +289,7 @@ export default function Home() {
                   each focusing on innovative projects that benefit the community and advance technical skills.
                 </p>
               </div>
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FF5722]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }}></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FF5722]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }} />
             </div>
 
             {/* Events Team Card */}
@@ -301,7 +301,7 @@ export default function Home() {
                 transform: 'translateZ(0)', // Force hardware acceleration
               }}
             >
-              <div 
+              <div
                 className="team-logo mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-8 relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, #0F9D58, #64D8CB)',
@@ -311,11 +311,11 @@ export default function Home() {
                 }}
               >
                 <Calendar className="team-icon text-white h-12 w-12 relative" style={{ zIndex: 25 }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full"></div>
-                <div 
+                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full" />
+                <div
                   className="absolute -inset-2 rounded-full opacity-75 blur-md"
                   style={{ background: 'radial-gradient(circle, rgba(100, 216, 203, 0.3) 0%, transparent 70%)' }}
-                ></div>
+                />
               </div>
               <div className="team-content space-y-6 relative" style={{ zIndex: 20 }}>
                 <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>Events</h3>
@@ -324,7 +324,7 @@ export default function Home() {
                   The Events team organizes workshops, competitions, etc to foster a culture of learning and collaboration.
                 </p>
               </div>
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0F9D58]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }}></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0F9D58]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }} />
             </div>
 
             {/* Robotics Team Card */}
@@ -336,7 +336,7 @@ export default function Home() {
                 transform: 'translateZ(0)', // Force hardware acceleration
               }}
             >
-              <div 
+              <div
                 className="team-logo mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-8 relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, #FF5722, #FF8A65)',
@@ -346,11 +346,11 @@ export default function Home() {
                 }}
               >
                 <Bug className="team-icon text-white h-12 w-12 relative" style={{ zIndex: 25 }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full"></div>
-                <div 
+                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full" />
+                <div
                   className="absolute -inset-2 rounded-full opacity-75 blur-md"
                   style={{ background: 'radial-gradient(circle, rgba(255, 138, 101, 0.3) 0%, transparent 70%)' }}
-                ></div>
+                />
               </div>
               <div className="team-content space-y-6 relative" style={{ zIndex: 20 }}>
                 <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>PR & SPONSORSHIP</h3>
@@ -358,7 +358,7 @@ export default function Home() {
                   The PR & Sponsorship team builds strong industry connections and promotes our initiatives through strategic outreach, branding, and collaborative partnerships.
                 </p>
               </div>
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FF5722]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }}></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FF5722]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }} />
             </div>
 
             {/* Content Team Card */}
@@ -370,7 +370,7 @@ export default function Home() {
                 transform: 'translateZ(0)', // Force hardware acceleration
               }}
             >
-              <div 
+              <div
                 className="team-logo mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-8 relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, #0F9D58, #64D8CB)',
@@ -380,11 +380,11 @@ export default function Home() {
                 }}
               >
                 <LayoutDashboard className="team-icon text-white h-12 w-12 relative" style={{ zIndex: 25 }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full"></div>
-                <div 
+                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full" />
+                <div
                   className="absolute -inset-2 rounded-full opacity-75 blur-md"
                   style={{ background: 'radial-gradient(circle, rgba(100, 216, 203, 0.3) 0%, transparent 70%)' }}
-                ></div>
+                />
               </div>
               <div className="team-content space-y-6 relative" style={{ zIndex: 20 }}>
                 <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>Content</h3>
@@ -393,7 +393,7 @@ export default function Home() {
                   sharing insights on the latest trends and developments.
                 </p>
               </div>
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0F9D58]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }}></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0F9D58]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }} />
             </div>
 
             {/* Marketing and Design Team Card */}
@@ -405,7 +405,7 @@ export default function Home() {
                 transform: 'translateZ(0)', // Force hardware acceleration
               }}
             >
-              <div 
+              <div
                 className="team-logo mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-8 relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, #FF5722, #FF8A65)',
@@ -415,11 +415,11 @@ export default function Home() {
                 }}
               >
                 <Paintbrush className="team-icon text-white h-12 w-12 relative" style={{ zIndex: 25 }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full"></div>
-                <div 
+                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full" />
+                <div
                   className="absolute -inset-2 rounded-full opacity-75 blur-md"
                   style={{ background: 'radial-gradient(circle, rgba(255, 138, 101, 0.3) 0%, transparent 70%)' }}
-                ></div>
+                />
               </div>
               <div className="team-content space-y-6 relative" style={{ zIndex: 20 }}>
                 <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>Marketing and Design</h3>
@@ -428,7 +428,7 @@ export default function Home() {
                   promotes our initiatives, and ensures our message resonates with a wide audience.
                 </p>
               </div>
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FF5722]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }}></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FF5722]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }} />
             </div>
 
             {/* Research Team Card */}
@@ -440,7 +440,7 @@ export default function Home() {
                 transform: 'translateZ(0)', // Force hardware acceleration
               }}
             >
-              <div 
+              <div
                 className="team-logo mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-8 relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, #0F9D58, #64D8CB)',
@@ -450,11 +450,11 @@ export default function Home() {
                 }}
               >
                 <BookOpen className="team-icon text-white h-12 w-12 relative" style={{ zIndex: 25 }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full"></div>
-                <div 
+                <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent rounded-full" />
+                <div
                   className="absolute -inset-2 rounded-full opacity-75 blur-md"
                   style={{ background: 'radial-gradient(circle, rgba(100, 216, 203, 0.3) 0%, transparent 70%)' }}
-                ></div>
+                />
               </div>
               <div className="team-content space-y-6 relative" style={{ zIndex: 20 }}>
                 <h3 className="text-3xl font-bold uppercase text-white tracking-widest" style={{ opacity: 1 }}>Research</h3>
@@ -463,7 +463,7 @@ export default function Home() {
                   offering a space for students to learn research methodologies and conduct meaningful studies.
                 </p>
               </div>
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0F9D58]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }}></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0F9D58]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ zIndex: 1 }} />
             </div>
           </div>
         </div>

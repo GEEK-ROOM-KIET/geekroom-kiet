@@ -12,10 +12,10 @@ const FluidBackground = () => {
           const color = colors[i % colors.length];
           const size = 120 + Math.random() * 200;
           const delay = i * 3;
-          
+
           return (
             <div
-              key={i}
+              key={`large-circle-${i}-${color}-${size}`}
               className="absolute rounded-full animate-pulse"
               style={{
                 width: `${size}px`,
@@ -29,17 +29,17 @@ const FluidBackground = () => {
             />
           );
         })}
-        
+
         {/* Medium floating circles */}
         {Array.from({ length: 5 }, (_, i) => {
           const colors = ['#FF2D55', '#00C8B5', '#786EFF'];
           const color = colors[i % colors.length];
           const size = 80 + Math.random() * 100;
           const delay = i * 2;
-          
+
           return (
             <div
-              key={`medium-${i}`}
+              key={`medium-circle-${i}-${color}-${size}`}
               className="absolute rounded-full"
               style={{
                 width: `${size}px`,
@@ -53,17 +53,17 @@ const FluidBackground = () => {
             />
           );
         })}
-        
+
         {/* Small floating particles */}
         {Array.from({ length: 8 }, (_, i) => {
           const colors = ['#FF2D55', '#00C8B5', '#786EFF'];
           const color = colors[i % colors.length];
           const size = 30 + Math.random() * 50;
           const delay = i * 1.2;
-          
+
           return (
             <div
-              key={`small-${i}`}
+              key={`small-particle-${i}-${color}-${size}`}
               className="absolute rounded-full animate-ping"
               style={{
                 width: `${size}px`,
@@ -78,7 +78,7 @@ const FluidBackground = () => {
           );
         })}
       </div>
-      
+
       {/* CSS animations for fluid movement */}
       <style jsx global>{`
         @keyframes float-1 {

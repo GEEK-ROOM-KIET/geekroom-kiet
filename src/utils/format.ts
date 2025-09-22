@@ -5,7 +5,7 @@
 // Date formatting
 export function formatDate(date: Date | string, options?: Intl.DateTimeFormatOptions): string {
   const dateObj = typeof date === 'string' ? new Date(date) : date;
-  
+
   const defaultOptions: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',
@@ -66,7 +66,7 @@ export function formatRelativeTime(date: Date | string): string {
 // Text formatting
 export function truncateText(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength).trim() + '...';
+  return `${text.slice(0, maxLength).trim()}...`;
 }
 
 export function capitalizeFirst(text: string): string {
@@ -95,27 +95,27 @@ export function formatNumber(num: number): string {
 
 export function formatCompactNumber(num: number): string {
   if (num < 1000) return num.toString();
-  
+
   const units = ['', 'K', 'M', 'B', 'T'];
   const unitIndex = Math.floor(Math.log10(num) / 3);
-  const value = num / Math.pow(1000, unitIndex);
-  
+  const value = num / 1000 ** unitIndex;
+
   return `${value.toFixed(1)}${units[unitIndex]}`;
 }
 
-export function formatPercentage(value: number, decimals: number = 1): string {
+export function formatPercentage(value: number, decimals = 1): string {
   return `${(value * 100).toFixed(decimals)}%`;
 }
 
 // File size formatting
 export function formatFileSize(bytes: number): string {
   if (bytes === 0) return '0 Bytes';
-  
+
   const k = 1024;
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  
-  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(2))} ${sizes[i]}`;
+
+  return `${Number.parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 }
 
 // URL formatting
@@ -138,7 +138,7 @@ export function extractDomain(url: string): string {
 // Social media formatting
 export function formatSocialHandle(handle: string, platform: 'twitter' | 'instagram' | 'github' | 'linkedin'): string {
   const cleanHandle = handle.replace(/^@/, '');
-  
+
   switch (platform) {
     case 'twitter':
       return `@${cleanHandle}`;
@@ -154,7 +154,7 @@ export function formatSocialHandle(handle: string, platform: 'twitter' | 'instag
 }
 
 // Reading time calculation
-export function calculateReadingTime(text: string, wordsPerMinute: number = 200): number {
+export function calculateReadingTime(text: string, wordsPerMinute = 200): number {
   const words = text.trim().split(/\s+/).length;
   return Math.ceil(words / wordsPerMinute);
 }
@@ -162,20 +162,20 @@ export function calculateReadingTime(text: string, wordsPerMinute: number = 200)
 // Phone number formatting
 export function formatPhoneNumber(phone: string): string {
   const cleaned = phone.replace(/\D/g, '');
-  
+
   if (cleaned.length === 10) {
     return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
   }
-  
+
   if (cleaned.length === 11 && cleaned[0] === '1') {
     return `+1 (${cleaned.slice(1, 4)}) ${cleaned.slice(4, 7)}-${cleaned.slice(7)}`;
   }
-  
+
   return phone;
 }
 
 // Currency formatting
-export function formatCurrency(amount: number, currency: string = 'USD'): string {
+export function formatCurrency(amount: number, currency = 'USD'): string {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency,
