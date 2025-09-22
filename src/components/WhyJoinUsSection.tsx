@@ -59,7 +59,7 @@ const FloatingAvatar: React.FC<FloatingAvatarProps> = ({
 
       // Continuous floating animation
       gsap.to(avatarRef.current, {
-        y: "+=15",
+        y: "+=10",
         duration: 2 + Math.random() * 2,
         ease: "sine.inOut",
         yoyo: true,
@@ -79,10 +79,10 @@ const FloatingAvatar: React.FC<FloatingAvatarProps> = ({
   }, [delay]);
 
   const sizeClasses = {
-    sm: "w-12 h-12",
-    md: "w-16 h-16",
-    lg: "w-20 h-20",
-    xl: "w-24 h-24"
+    sm: "w-8 h-8 md:w-12 md:h-12",
+    md: "w-12 h-12 md:w-16 md:h-16", 
+    lg: "w-14 h-14 md:w-20 md:h-20",
+    xl: "w-16 h-16 md:w-24 md:h-24"
   };
 
   return (
@@ -90,18 +90,23 @@ const FloatingAvatar: React.FC<FloatingAvatarProps> = ({
       id={id}
       ref={avatarRef}
       className="absolute"
-      style={{ top: `${top}px`, left: `${left}px` }}
+      style={{ 
+        top: `${top*1 }px`, 
+        left: `${left * 0.7}px`
+      }}
     >
-      <div
-        className={`${sizeClasses[size]} rounded-full overflow-hidden border-4 shadow-lg relative`}
-        style={{ borderColor: borderColor || '#FF2D55' }}
+      <div 
+        className={`${sizeClasses[size]} rounded-full overflow-hidden border-2 md:border-4 shadow-lg relative`}
+        style={{ 
+          borderColor: borderColor || '#FF2D55',
+        }}
       >
         <Image
           src={src}
           alt={alt}
           fill
           className="object-cover"
-          sizes="96px"
+          sizes="(max-width: 768px) 64px, 96px"
         />
         <div
           className="absolute inset-0 rounded-full"
@@ -340,13 +345,13 @@ const WhyJoinUsSection = () => {
       label: "Events",
       color: "#FF2D55",
       top: 110,
-      left: 320
+      left: 250
     },
     {
       label: "Learning",
       color: "#786EFF",
-      top: 320,
-      left: 180
+      top: 328,
+      left: 140
     }
   ];
 
