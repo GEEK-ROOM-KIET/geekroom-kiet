@@ -382,6 +382,53 @@
       "endDate": "2024-08-30",
       "certificates": "1000+",
       "rating": 4.8
+    },
+    {
+      "id": 8,
+      "title": "Digital Photography Workshop",
+      "description": "A creative workshop series teaching digital photography techniques, photo editing, and visual storytelling to students across different disciplines.",
+      "fullDescription": "Digital Photography Workshop is an interdisciplinary project that bridges technology and art, teaching students essential digital photography skills. The program combines hands-on camera work with digital editing techniques using modern software tools.",
+      "category": "Others",
+      "status": "completed",
+      "techStack": [
+        "Adobe Photoshop",
+        "Lightroom",
+        "Canva",
+        "GIMP",
+        "Photography Equipment"
+      ],
+      "features": [
+        "Basic to advanced photography techniques",
+        "Photo editing workshops",
+        "Visual storytelling sessions",
+        "Equipment handling training",
+        "Portfolio development",
+        "Exhibition preparation"
+      ],
+      "team": [
+        {
+          "name": "Raj Patel",
+          "role": "Workshop Leader & Photographer",
+          "avatar": "/team members/raj.png"
+        },
+        {
+          "name": "Diksha Gupta",
+          "role": "Creative Director",
+          "avatar": "/team members/diksha.png"
+        }
+      ],
+      "links": {
+        "demo": "https://photography.geekroom-kiet.com",
+        "gallery": "https://photos.geekroom-kiet.com"
+      },
+      "images": [
+        "/1.jpg",
+        "/2.jpg"
+      ],
+      "startDate": "2024-01-15",
+      "endDate": "2024-05-30",
+      "participants": "80+",
+      "rating": 4.7
     }
   ],
   "categories": [
